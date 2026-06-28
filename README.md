@@ -22,33 +22,6 @@ Citation-grounded answers — the RAG system cites the source article for every 
 
 ComponentTechnologyClassical MLScikit-learn · Logistic Regression · Linear SVM · TF-IDFDeep LearningPyTorch · Bi-LSTM · TextCNNTransformerHuggingFace · DistilBERT (fine-tuned)RAG EmbeddingsSentenceTransformers · all-mpnet-base-v2RAG GeneratorFlan-T5-Base (with beam search)Retrieval IndexScikit-learn · NearestNeighbors (cosine similarity)
 
-Raw News Data (6 sources)
-        │
-        ▼
- Merging & Cleaning
-        │
-        ▼
-Sentiment Annotation (BERT-based labeler → Negative / Neutral / Positive)
-        │
-        ▼
-┌───────────────────────────────────────┐
-│        Model Training & Evaluation    │
-│  ┌─────────┐  ┌──────────┐  ┌──────┐ │
-│  │ ML      │  │ DL       │  │ BERT │ │
-│  │ LR/SVM  │  │ Bi-LSTM  │  │Distil│ │
-│  │ TF-IDF  │  │ TextCNN  │  │BERT  │ │
-│  └─────────┘  └──────────┘  └──────┘ │
-└───────────────────────────────────────┘
-        │
-        ▼
-  RAG Pipeline
-  ┌──────────────────────────────────────┐
-  │  Article Chunking (220w / 40w overlap)│
-  │  → MPNet Embeddings                  │
-  │  → Cosine Retrieval Index            │
-  │  → Flan-T5 Generator + Citations     │
-  └──────────────────────────────────────┘
-
   📊 Results Summary
 
 ModelTypePerformanceLogistic RegressionClassical MLBaselineLinear SVMClassical MLBest classical baselineTextCNNDeep LearningSignificant improvement over MLBi-LSTMDeep LearningBetter than TextCNN (long-range dependencies)DistilBERTTransformerBest overall — highest Accuracy, F1, AUC
