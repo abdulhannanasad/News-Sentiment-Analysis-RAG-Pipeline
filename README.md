@@ -120,19 +120,9 @@ python rag_pipeline.py --query "What is the impact of AI on news reporting?"
 
 ## 👥 Authors
 
-- **Hannan Asad** (23L-0808)
-- **Abdul Rehman Shahid** (23L-0720)
-- **Shoaib Asif** (23L-0710)
-
----
-
-## 🔮 Future Work
-
-- Swap Flan-T5 for stronger generators (Phi-2, Gemma-2)
-- GPU-accelerated retrieval with FAISS
-- Cross-encoder reranking for better retrieval precision
-- Web UI for real-time question answering
-- Multilingual and multi-category expansion
+- **Hannan Asad**
+- **Abdul Rehman Shahid** 
+- **Shoaib Asif** 
 
 ---
 
